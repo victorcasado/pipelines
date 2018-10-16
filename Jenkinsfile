@@ -13,8 +13,6 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                echo 'Hello Mr. ${username}'
-                echo "I said, Hello Mr. ${username}"
                 sh 'echo "Hello World"'
             }
         }
