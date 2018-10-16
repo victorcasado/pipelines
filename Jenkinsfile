@@ -13,9 +13,10 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                def username = 'Jenkins'
+                username = 'Jenkins'
                 echo 'Hello Mr. ${username}'
                 echo "I said, Hello Mr. ${username}"
+                sh 'echo "Hello World"'
             }
         }
     }
