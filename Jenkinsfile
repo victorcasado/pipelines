@@ -13,7 +13,6 @@ pipeline {
         }
         stage('Deploy') {
             steps {
-                username = 'Jenkins'
                 echo 'Hello Mr. ${username}'
                 echo "I said, Hello Mr. ${username}"
                 sh 'echo "Hello World"'
