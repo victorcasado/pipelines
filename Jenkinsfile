@@ -1,12 +1,10 @@
 pipeline {
     agent none
-
     stages {
         stage("build and deploy on Windows and Linux") {
             parallel {
                 stage("windows") {
                     agent any
-                    }
                     stages {
                         stage("build") {
                             steps {
@@ -22,8 +20,7 @@ pipeline {
                 }
 
                 stage("linux") {
-                    agent any
-                    }
+                    agent any                    }
                     stages {
                         stage("build") {
                             steps {
