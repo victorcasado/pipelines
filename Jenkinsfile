@@ -16,9 +16,9 @@ pipeline {
                                 echo 'test'
                             }
                         }    
-                        stage("deploy") {
+                        stage("deploy-staging") {
                             when {
-                                 branch "QA"
+                                 branch "master"
                             }
                             steps {
                                 echo 'run-deploy.bat'
@@ -39,12 +39,35 @@ pipeline {
                                 echo 'test'
                             }
                         }    
-                        stage("deploy") {
+                        stage("deploy-pre-prod") {
                             when {
                                  branch "master"
                             }
                              steps {
                                 echo './run-deploy.sh'
+                            }
+                        }
+                    }
+                }
+                stage("iOS") {
+                    agent any                    
+                    stages {
+                        stage("build") {
+                            steps {
+                                echo 'build'
+                            }
+                        }    
+                        stage("test") {
+                            steps {
+                                echo 'test'
+                            }
+                        }    
+                        stage("deploy-prod") {
+                            when {
+                                 branch "master"
+                            }
+                             steps {
+                                echo 'deploy'
                             }
                         }
                     }
