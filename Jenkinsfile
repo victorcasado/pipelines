@@ -17,6 +17,9 @@ pipeline {
                             }
                         }    
                         stage("deploy") {
+                            when {
+                                 branch "master"
+                            }
                             steps {
                                 echo 'run-deploy.bat'
                             }
@@ -28,7 +31,7 @@ pipeline {
                     stages {
                         stage("build") {
                             steps {
-                                sh "./run-build.sh"
+                                echo './run-build.sh'
                             }
                         }    
                         stage("test") {
@@ -37,6 +40,9 @@ pipeline {
                             }
                         }    
                         stage("deploy") {
+                            when {
+                                 branch "master"
+                            }
                              steps {
                                 echo './run-deploy.sh'
                             }
