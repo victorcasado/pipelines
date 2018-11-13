@@ -10,6 +10,7 @@ pipeline {
                             steps {
                                 echo 'run-build.bat'
                             }
+                        }    
                         stage("test") {
                             steps {
                                 echo 'test'
@@ -29,6 +30,7 @@ pipeline {
                             steps {
                                 echo './run-build.sh'
                             }
+                        }    
                         stage("test") {
                             steps {
                                 echo 'test'
