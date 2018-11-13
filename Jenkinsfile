@@ -1,7 +1,7 @@
 pipeline {
     agent none
     stages {
-        stage("build and deploy on Windows and Linux") {
+        stage("Sequential Stages") {
             parallel {
                 stage("windows") {
                     agent any
@@ -9,6 +9,10 @@ pipeline {
                         stage("build") {
                             steps {
                                 echo 'run-build.bat'
+                            }
+                        stage("test") {
+                            steps {
+                                echo 'test'
                             }
                         }
                         stage("deploy") {
@@ -25,6 +29,10 @@ pipeline {
                         stage("build") {
                             steps {
                                 echo './run-build.sh'
+                            }
+                        stage("test") {
+                            steps {
+                                echo 'test'
                             }
                         }
                         stage("deploy") {
