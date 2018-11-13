@@ -8,7 +8,7 @@ pipeline {
                     stages {
                         stage("build") {
                             steps {
-                                echo 'run-build.bat'
+                                bat "run-build.bat"
                             }
                         }    
                         stage("test") {
@@ -28,7 +28,7 @@ pipeline {
                     stages {
                         stage("build") {
                             steps {
-                                echo './run-build.sh'
+                                sh "./run-build.sh"
                             }
                         }    
                         stage("test") {
