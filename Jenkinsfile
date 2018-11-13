@@ -16,7 +16,7 @@ pipeline {
                                 echo 'test'
                             }
                         }    
-                        stage("deploy-staging") {
+                        stage("deploy-windows") {
                             when {
                                  branch "master"
                             }
@@ -39,7 +39,7 @@ pipeline {
                                 echo 'test'
                             }
                         }    
-                        stage("deploy-pre-prod") {
+                        stage("deploy-linux") {
                             when {
                                  branch "master"
                             }
@@ -62,7 +62,7 @@ pipeline {
                                 echo 'test'
                             }
                         }    
-                        stage("deploy-prod") {
+                        stage("deploy-iOS") {
                             when {
                                  branch "master"
                             }
