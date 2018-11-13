@@ -14,7 +14,6 @@ pipeline {
                             steps {
                                 echo 'test'
                             }
-                        }
                         stage("deploy") {
                             steps {
                                 echo 'run-deploy.bat'
@@ -34,7 +33,6 @@ pipeline {
                             steps {
                                 echo 'test'
                             }
-                        }
                         stage("deploy") {
                              steps {
                                 echo './run-deploy.sh'
