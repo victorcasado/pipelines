@@ -18,7 +18,7 @@ pipeline {
                         }    
                         stage("deploy") {
                             when {
-                                 branch "master"
+                                 branch "QA"
                             }
                             steps {
                                 echo 'run-deploy.bat'
