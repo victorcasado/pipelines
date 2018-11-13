@@ -11,15 +11,12 @@ pipeline {
                     stages {
                         stage("build") {
                             steps {
-                                echo "run-build.bat"
+                                echo 'run-build.bat'
                             }
                         }
                         stage("deploy") {
-                            when {
-                                branch "master"
-                            }
                             steps {
-                                echo "run-deploy.bat"
+                                echo 'run-deploy.bat'
                             }
                         }
                     }
@@ -32,15 +29,12 @@ pipeline {
                     stages {
                         stage("build") {
                             steps {
-                                echo "./run-build.sh"
+                                echo './run-build.sh'
                             }
                         }
                         stage("deploy") {
-                             when {
-                                 branch "master"
-                             }
                              steps {
-                                echo "./run-deploy.sh"
+                                echo './run-deploy.sh'
                             }
                         }
                     }
